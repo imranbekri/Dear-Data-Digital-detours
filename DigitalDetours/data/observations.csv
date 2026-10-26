@@ -26,3 +26,11 @@ id,day,period,intended,ended,detour,minutes,completed,provenance,start_app,end_a
 24,8,PM,entertainment,entertainment,yes,60,no,observed,YouTube,TikTok,15
 25,8,PM,information,information,no,90,yes,observed,GitHub,GitHub,0
 26,8,AM,information,information,no,20,yes,observed,Moodle,Moodle,0
+27,9,EVE,entertainment,entertainment,no,90,yes,observed,TikTok,TikTok,0
+28,9,PM,communication,communication,no,10,yes,observed,Gmail,Gmail,0
+29,10,AM,entertainment,entertainment,yes,120,yes,observed,YouTube,TikTok,20
+30,10,AM,information,information,no,15,yes,observed,Moodle,Moodle,0
+31,10,PM,information,information,no,10,yes,observed,ChatGPT,ChatGPT,0
+32,11,EVE,information,information,no,45,yes,observed,GitHub,GitHub,0
+33,11,AM,entertainment,entertainment,yes,10,no,observed,SoundCloud,Spotify,5
+34,11,PM,communication,communication,no,5,yes,observed,Outlook,Outlook,0
