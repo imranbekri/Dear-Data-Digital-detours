@@ -66,5 +66,5 @@ void draw() {
 }
 
 float getCircleSize(int minutes) {
-  return constrain(minutes * 0.6, 14, 70);
+  return constrain(minutes * 0.4, 12, 40);
 }
