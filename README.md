@@ -13,8 +13,8 @@ The aim is to turn these everyday observations into a visual representation usin
 I record individual phone-use sessions based on my actual phone activity.
 
 **Current progress:**
-- **35 genuine individual observations** collected
-- **11 collection days** represented in the main dataset
+- **37 genuine individual observations** collected
+- **12 collection days** represented in the main dataset
 - Part 1 target of 25 observations achieved
 - Final project target: 100 observations
 
