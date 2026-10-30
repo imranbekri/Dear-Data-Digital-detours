@@ -34,3 +34,5 @@ id,day,period,intended,ended,detour,minutes,completed,provenance,start_app,end_a
 33,11,AM,entertainment,entertainment,yes,10,no,observed,SoundCloud,Spotify,5
 34,11,PM,communication,communication,no,5,yes,observed,Outlook,Outlook,0
 35,11,EVE,information,information,yes,10,no,observed,Grok,ChatGPT,5
+36,12,AM,entertainment,entertainment,yes,60,observed,Tiktok,0
+37,12AM,entertainment,entertainment,yes,45,observed,Youtube,0
