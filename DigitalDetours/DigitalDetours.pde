@@ -1,51 +1,77 @@
+
 Table data;
 
 void setup() {
-  size(800, 600);
-  println(dataPath("observations.csv"));
+  size(900, 900);
 
   data = loadTable("observations.csv", "header");
+
+  if (data == null) {
+    println("Could not load observations.csv from the data folder.");
+    exit();
+    return;
+  }
 
   println("Number of observations: " + data.getRowCount());
 }
 
 void draw() {
   background(255);
+
+  // Title
   fill(0);
-  textSize(24);
-  text("Digital Detours", 300, 30);
+  textAlign(CENTER);
+  textSize(28);
+  text("Digital Detours", width / 2, 38);
+
   textSize(14);
+  text("Each circle represents one phone-use observation",
+       width / 2, 65);
 
-  fill(255, 0, 0);
-  ellipse(90, 45, 12, 12);
-
+  // Colour key
+  fill(220, 65, 65);
+  ellipse(320, 93, 14, 14);
   fill(0);
-  text("Detour", 105, 50);
+  text("Detour", 375, 98);
 
-  fill(0, 180, 0);
-  ellipse(200, 45, 12, 12);
-
+  fill(60, 165, 90);
+  ellipse(480, 93, 14, 14);
   fill(0);
-  text("No detour", 215, 50);
+  text("No detour", 558, 98);
 
+  // Display observations
   for (int i = 0; i < data.getRowCount(); i++) {
     TableRow row = data.getRow(i);
 
+    int id = row.getInt("id");
     int minutes = row.getInt("minutes");
     String detour = row.getString("detour");
 
-    float x = 80 + (i % 5) * 150;
-    float y = 130 + (i / 5) * 100;
-    float size = getCircleSize(minutes);
-if (detour.equals("yes")) {
-  fill(255, 0, 0);
-} else {
-  fill(0, 180, 0);
-}
+    // Position: five circles per row
+    float x = 110 + (i % 5) * 170;
+    float y = 165 + (i / 5) * 105;
 
-    ellipse(x, y, size, size);
+    float circleSize = getCircleSize(minutes);
+
+    // Choose circle colour
+    if (detour.equals("yes")) {
+      fill(220, 65, 65);
+    } else {
+      fill(60, 165, 90);
+    }
+
+    noStroke();
+    ellipse(x, y, circleSize, circleSize);
+
+    // Observation label
+    fill(0);
+    textSize(12);
+    text("ID " + id + " | " + minutes + " min",
+         x, y + 48);
   }
 }
+
+// Method returning a value
 float getCircleSize(int minutes) {
-  return minutes;
+  return constrain(minutes * 0.6, 14, 70);
 }
