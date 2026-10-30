@@ -1,7 +1,7 @@
 Table data;
 
 void setup() {
-  size(900, 900);
+  size(900, 710);;
 
   data = loadTable("observations.csv", "header");
 
@@ -37,14 +37,15 @@ void draw() {
   text("No detour", 558, 98);
 
   for (int i = 0; i < data.getRowCount(); i++) {
-    TableRow row = data.getRow(i);
+    TableRow row = data.findRow(str(i + 1), "id");
+    if (row == null) continue;
 
     int id = row.getInt("id");
     int minutes = row.getInt("minutes");
     String detour = row.getString("detour");
 
     float x = 110 + (i % 5) * 170;
-    float y = 165 + (i / 5) * 105;
+    float y = 165 + (i / 5) * 78;
 
     float circleSize = getCircleSize(minutes);
 
