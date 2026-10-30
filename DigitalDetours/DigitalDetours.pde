@@ -1,7 +1,7 @@
 Table data;
 
 void setup() {
-  size(900, 710);;
+  size(900, 710);
 
   data = loadTable("observations.csv", "header");
 
