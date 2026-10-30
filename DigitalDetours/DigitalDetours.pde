@@ -18,7 +18,6 @@ void setup() {
 void draw() {
   background(255);
 
-  // Title
   fill(0);
   textAlign(CENTER);
   textSize(28);
@@ -28,7 +27,6 @@ void draw() {
   text("Each circle represents one phone-use observation",
        width / 2, 65);
 
-  // Colour key
   fill(220, 65, 65);
   ellipse(320, 93, 14, 14);
   fill(0);
@@ -39,7 +37,6 @@ void draw() {
   fill(0);
   text("No detour", 558, 98);
 
-  // Display observations
   for (int i = 0; i < data.getRowCount(); i++) {
     TableRow row = data.getRow(i);
 
@@ -47,13 +44,11 @@ void draw() {
     int minutes = row.getInt("minutes");
     String detour = row.getString("detour");
 
-    // Position: five circles per row
     float x = 110 + (i % 5) * 170;
     float y = 165 + (i / 5) * 105;
 
     float circleSize = getCircleSize(minutes);
 
-    // Choose circle colour
     if (detour.equals("yes")) {
       fill(220, 65, 65);
     } else {
@@ -62,8 +57,7 @@ void draw() {
 
     noStroke();
     ellipse(x, y, circleSize, circleSize);
-
-    // Observation label
+ 
     fill(0);
     textSize(12);
     text("ID " + id + " | " + minutes + " min",
@@ -71,7 +65,6 @@ void draw() {
   }
 }
 
-// Method returning a value
 float getCircleSize(int minutes) {
   return constrain(minutes * 0.6, 14, 70);
 }
