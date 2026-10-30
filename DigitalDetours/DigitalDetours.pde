@@ -1,4 +1,3 @@
-
 Table data;
 
 void setup() {
