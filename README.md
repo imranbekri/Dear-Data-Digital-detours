@@ -39,7 +39,6 @@ Each observation contains 12 fields:
 | `end_app` | Application used at the end |
 | `detour_minutes` | Time spent on the distraction |
 
-I have also reviewed iPhone Screen Time data for 27 and 28 October to support my ongoing data collection. These additional app-duration records are maintained separately from the 43 individual observations in the main CSV.
 
 ## Processing Visualisation
 
