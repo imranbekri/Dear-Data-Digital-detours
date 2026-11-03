@@ -36,9 +36,9 @@ id,day,period,intended,ended,detour,minutes,completed,provenance,start_app,end_a
 35,11,EVE,information,information,yes,10,no,observed,Grok,ChatGPT,5
 36,12,AM,entertainment,entertainment,no,60,yes,observed,Tiktok,Tiktok,0
 37,12,AM,entertainment,entertainment,no,45,yes, observed,Youtube,Youtube,0
-38,13,unknown,entertainment,entertainment,no,90,yes,observed,TikTok,TikTok,0
-39,13,unknown,entertainment,entertainment,no,60,yes,observed,YouTube,YouTube,0
-40,13,unknown,information,information,no,25,yes,observed,Moodle,Moodle,0
-41,14,unknown,communication,communication,no,5,yes,observed,Gmail,Gmail,0
-42,14,unknown,information,information,no,60,yes,observed,GitHub,GitHub,0
-43,14,unknown,entertainment,entertainment,no,120,yes,observed,Instagram,Instagram,0
+38,13,AM,entertainment,entertainment,no,90,yes,observed,TikTok,TikTok,0
+39,13,AM,entertainment,entertainment,no,60,yes,observed,YouTube,YouTube,0
+40,13,PM,information,information,no,25,yes,observed,Moodle,Moodle,0
+41,14,AM,communication,communication,no,5,yes,observed,Gmail,Gmail,0
+42,14,EVE,information,information,no,60,yes,observed,GitHub,GitHub,0
+43,14,PM,entertainment,entertainment,no,120,yes,observed,Instagram,Instagram,0
