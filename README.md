@@ -52,7 +52,7 @@ Each phone-use session is represented by a circle.
 - **Green circles** represent sessions without a detour.
 - **Circle size** represents the duration of the phone-use session.
 - **Labels** identify individual observations and their durations.
-- Circles are arranged in rows of five to make comparisons easier.
+- Circles are arranged in rows of six to make comparisons easier.
 
 This allows me to compare sessions visually and identify patterns in phone use and distraction.
 
