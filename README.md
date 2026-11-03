@@ -13,8 +13,8 @@ The aim is to turn these everyday observations into a visual representation usin
 I record individual phone-use sessions based on my actual phone activity.
 
 **Current progress:**
-- **37 genuine individual observations** collected
-- **12 collection days** represented in the main dataset
+- **43 genuine individual observations** collected
+- **14 collection days** represented in the main dataset
 - Part 1 target of 25 observations achieved
 - Final project target: 100 observations
 
@@ -39,7 +39,7 @@ Each observation contains 12 fields:
 | `end_app` | Application used at the end |
 | `detour_minutes` | Time spent on the distraction |
 
-I have also reviewed iPhone Screen Time data for 27 and 28 October to support my ongoing data collection. These additional app-duration records are maintained separately from the 35 individual observations in the main CSV.
+I have also reviewed iPhone Screen Time data for 27 and 28 October to support my ongoing data collection. These additional app-duration records are maintained separately from the 43 individual observations in the main CSV.
 
 ## Processing Visualisation
 
@@ -82,7 +82,7 @@ The sketch reads the CSV using Processing's `loadTable()` function.
 
 So far, I have:
 
-- Collected and organised 35 genuine individual phone-use observations.
+- Collected and organised 43 genuine individual phone-use observations.
 - Created a CSV dataset containing 12 fields.
 - Stored my project on GitHub.
 - Developed a Processing sketch that reads external CSV data.
