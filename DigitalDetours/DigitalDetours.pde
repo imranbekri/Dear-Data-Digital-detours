@@ -44,8 +44,8 @@ void draw() {
     int minutes = row.getInt("minutes");
     String detour = row.getString("detour");
 
-    float x = 110 + (i % 5) * 170;
-    float y = 145 + (i / 5) * 72;
+    float x = 100 + (i % 6) * 140;
+    float y = 145 + (i / 6) * 72;
 
     float circleSize = getCircleSize(minutes);
 
