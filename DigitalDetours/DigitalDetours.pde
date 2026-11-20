@@ -44,8 +44,8 @@ void draw() {
     int minutes = row.getInt("minutes");
     String detour = row.getString("detour");
 
-    float x = 100 + (i % 6) * 140;
-    float y = 145 + (i / 6) * 72;
+    float x = 45 + (i % 10) * 90;
+    float y = 145 + (i / 10) * 52;
 
     float circleSize = getCircleSize(minutes);
 
@@ -59,9 +59,8 @@ void draw() {
     ellipse(x, y, circleSize, circleSize);
  
     fill(0);
-    textSize(12);
-    text("ID " + id + " | " + minutes + " min",
-         x, y + 30);
+    textSize(9);
+    text("ID " + id, x, y + 25);
   }
 }
 
