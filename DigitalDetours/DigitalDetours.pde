@@ -29,9 +29,10 @@ void setup() {
     String startApp = row.getString("start_app");
     String endApp = row.getString("end_app");
     String detour = row.getString("detour");
+    String category = row.getString("intended");
 
     sessions[i] = new PhoneSession(
-      id, minutes, startApp, endApp, detour
+      id, minutes, startApp, endApp, detour, category
     );
   }
 }
@@ -76,32 +77,48 @@ class PhoneSession {
   String startApp;
   String endApp;
   String detour;
+  String category;
 
   PhoneSession(int id, int minutes,
                String startApp, String endApp,
-               String detour) {
+               String detour, String category) {
     this.id = id;
     this.minutes = minutes;
     this.startApp = startApp;
     this.endApp = endApp;
     this.detour = detour;
+    this.category = category;
   }
 
   void display(float x, float y) {
-    if (detour.equals("yes")) {
-      fill(220, 65, 65);
-    } else {
-      fill(60, 165, 90);
-    }
-
-    noStroke();
-
-    float circleSize = getCircleSize(minutes);
-    ellipse(x, y, circleSize, circleSize);
-
-    fill(0);
-    textAlign(CENTER);
-    textSize(10);
-    text("ID " + id, x, y + 23);
+  if (detour.equals("yes")) {
+    fill(220, 65, 65);
+  } else {
+    fill(60, 165, 90);
   }
+
+  noStroke();
+
+  float circleSize = getCircleSize(minutes);
+
+  if (category.equals("entertainment")) {
+    ellipse(x, y, circleSize, circleSize);
+  } else if (category.equals("information")) {
+    rectMode(CENTER);
+    rect(x, y, circleSize, circleSize);
+  } else if (category.equals("communication")) {
+    triangle(
+      x, y - circleSize / 2,
+      x - circleSize / 2, y + circleSize / 2,
+      x + circleSize / 2, y + circleSize / 2
+    );
+  } else {
+    ellipse(x, y, circleSize, circleSize);
+  }
+
+  fill(0);
+  textAlign(CENTER);
+  textSize(10);
+  text("ID " + id, x, y + 23);
+}
 }
