@@ -43,12 +43,42 @@ void draw() {
     int id = row.getInt("id");
     int minutes = row.getInt("minutes");
     String detour = row.getString("detour");
+    String startApp = row.getString("start_app");
+    String endApp = row.getString("end_app");
+
+PhoneSession session = new PhoneSession(
+  id, minutes, startApp, endApp, detour
+);
 
     float x = 45 + (i % 10) * 90;
     float y = 145 + (i / 10) * 52;
 
-    float circleSize = getCircleSize(minutes);
+    session.display(x, y);
+  }
+}
 
+float getCircleSize(int minutes) {
+  return constrain(minutes * 0.25, 8, 25);
+}
+
+class PhoneSession {
+  int id;
+  int minutes;
+  String startApp;
+  String endApp;
+  String detour;
+
+  PhoneSession(int id, int minutes,
+               String startApp, String endApp,
+               String detour) {
+    this.id = id;
+    this.minutes = minutes;
+    this.startApp = startApp;
+    this.endApp = endApp;
+    this.detour = detour;
+  }
+
+  void display(float x, float y) {
     if (detour.equals("yes")) {
       fill(220, 65, 65);
     } else {
@@ -56,15 +86,13 @@ void draw() {
     }
 
     noStroke();
+
+    float circleSize = constrain(minutes * 0.25, 8, 25);
     ellipse(x, y, circleSize, circleSize);
- 
+
     fill(0);
-    textSize(10);
     textAlign(CENTER);
+    textSize(10);
     text("ID " + id, x, y + 23);
   }
-}
-
-float getCircleSize(int minutes) {
-  return constrain(minutes * 0.25, 8, 25);
 }
