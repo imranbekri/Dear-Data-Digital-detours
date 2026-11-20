@@ -81,7 +81,7 @@ The sketch reads the CSV using Processing's `loadTable()` function.
 
 So far, I have:
 
-- Collected and organised 43 genuine individual phone-use observations.
+- Collected and organised 62 genuine individual phone-use observations.
 - Created a CSV dataset containing 12 fields.
 - Stored my project on GitHub.
 - Developed a Processing sketch that reads external CSV data.
