@@ -1,4 +1,5 @@
 Table data;
+PhoneSession[] sessions;
 
 void setup() {
   size(900, 710);
@@ -12,6 +13,27 @@ void setup() {
   }
 
   println("Number of observations: " + data.getRowCount());
+
+  sessions = new PhoneSession[data.getRowCount()];
+
+  for (int i = 0; i < data.getRowCount(); i++) {
+    TableRow row = data.findRow(str(i + 1), "id");
+    if (row == null) {
+  println("Missing observation ID " + (i + 1));
+  exit();
+  return;
+}
+
+    int id = row.getInt("id");
+    int minutes = row.getInt("minutes");
+    String startApp = row.getString("start_app");
+    String endApp = row.getString("end_app");
+    String detour = row.getString("detour");
+
+    sessions[i] = new PhoneSession(
+      id, minutes, startApp, endApp, detour
+    );
+  }
 }
 
 void draw() {
@@ -36,24 +58,11 @@ void draw() {
   fill(0);
   text("No detour", 558, 98);
 
-  for (int i = 0; i < data.getRowCount(); i++) {
-    TableRow row = data.findRow(str(i + 1), "id");
-    if (row == null) continue;
-
-    int id = row.getInt("id");
-    int minutes = row.getInt("minutes");
-    String detour = row.getString("detour");
-    String startApp = row.getString("start_app");
-    String endApp = row.getString("end_app");
-
-PhoneSession session = new PhoneSession(
-  id, minutes, startApp, endApp, detour
-);
-
+  for (int i = 0; i < sessions.length; i++) {
     float x = 45 + (i % 10) * 90;
     float y = 145 + (i / 10) * 52;
 
-    session.display(x, y);
+    sessions[i].display(x, y);
   }
 }
 
@@ -87,7 +96,7 @@ class PhoneSession {
 
     noStroke();
 
-    float circleSize = constrain(minutes * 0.25, 8, 25);
+    float circleSize = getCircleSize(minutes);
     ellipse(x, y, circleSize, circleSize);
 
     fill(0);
