@@ -59,11 +59,12 @@ void draw() {
     ellipse(x, y, circleSize, circleSize);
  
     fill(0);
-    textSize(9);
-    text("ID " + id, x, y + 25);
+    textSize(10);
+    textAlign(CENTER);
+    text("ID " + id, x, y + 23);
   }
 }
 
 float getCircleSize(int minutes) {
-  return constrain(minutes * 0.4, 12, 40);
+  return constrain(minutes * 0.25, 8, 25);
 }
